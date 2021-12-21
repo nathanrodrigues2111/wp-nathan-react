@@ -33,53 +33,58 @@ class WpnatAdminFunctions
             return;
         }
 
-        wp_enqueue_script( 'wp-nathan-react', WPNAT_URL . 'dist/bundle.js', [ 'jquery', 'wp-element' ], '', true );
-        wp_localize_script( 'wp-nathan-react', 'appLocalizer', [
-            'apiUrl' => home_url( '/wp-json' ),
-            'nonce' => wp_create_nonce( 'wp_rest' ),
+        wp_enqueue_script('wp-nathan-react', WPNAT_URL . 'dist/bundle.js', [ 'jquery', 'wp-element' ], '', true);
+        wp_localize_script('wp-nathan-react', 'appLocalizer', [
+            'apiUrl' => home_url('/wp-json'),
+            'nonce' => wp_create_nonce('wp_rest'),
             'text_domain' => WPNAT_TETXDOMAIN,
-        ] );
+        ]);
     }
 
     
-    public function wpnat_create_rest_routes() {
-        register_rest_route( 'wpnat/v1', '/settings', [
+    public function wpnat_create_rest_routes()
+    {
+        register_rest_route('wpnat/v1', '/settings', [
             'methods' => 'GET',
             'callback' => [ $this, 'wpnat_get_settings' ],
             'permission_callback' => [ $this, 'wpnat_get_settings_permission' ]
-        ] );
-        register_rest_route( 'wpnat/v1', '/settings', [
+        ]);
+        register_rest_route('wpnat/v1', '/settings', [
             'methods' => 'POST',
             'callback' => [ $this, 'wpnat_save_settings' ],
             'permission_callback' => [ $this, 'wpnat_save_settings_permission' ]
-        ] );
+        ]);
     }
 
-    public function wpnat_get_settings() {
-        $selected_theme = get_option( 'wpnat_selected_theme' );
-        $enable_comments  = get_option( 'wpnat_enable_comments' );
+    public function wpnat_get_settings()
+    {
+        $selected_theme = get_option('wpnat_selected_theme');
+        $enable_comments  = get_option('wpnat_enable_comments');
         $response = [
             'selected_theme' => $selected_theme,
             'enable_comments'  => $enable_comments,
         ];
 
-        return rest_ensure_response( $response );
+        return rest_ensure_response($response);
     }
 
-    public function wpnat_get_settings_permission() {
+    public function wpnat_get_settings_permission()
+    {
         return true;
     }
 
-    public function wpnat_save_settings( $req ) {
+    public function wpnat_save_settings($req)
+    {
         $selected_theme = isset($req['selected_theme']) ? sanitize_text_field($req['selected_theme']) : false;
         $enable_comments  = isset($req['enable_comments']) ? sanitize_text_field($req['enable_comments']) : false;
-        update_option( 'wpnat_selected_theme', $selected_theme );
-        update_option( 'wpnat_enable_comments', $enable_comments );
-        return rest_ensure_response( 'success' );
+        update_option('wpnat_selected_theme', $selected_theme);
+        update_option('wpnat_enable_comments', $enable_comments);
+        return rest_ensure_response('success');
     }
 
-    public function wpnat_save_settings_permission() {
-        return current_user_can( 'publish_posts' );
+    public function wpnat_save_settings_permission()
+    {
+        return current_user_can('publish_posts');
     }
 
     /**
