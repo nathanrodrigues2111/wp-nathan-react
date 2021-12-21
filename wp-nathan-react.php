@@ -28,9 +28,9 @@ define('WPNAT_PLUGIN_NAME', 'WP Nathan React');
 * Public functions
 */
 
-// if (! class_exists('WpnatPublicFunctions')) {
-//     include_once WPNAT_PATH . 'assets/classes/class-public-functions.php';
-// }
+if (! class_exists('WpnatPublicFunctions')) {
+    include_once WPNAT_PATH . 'assets/classes/class-public-functions.php';
+}
 
 /**
 * Admin functions
