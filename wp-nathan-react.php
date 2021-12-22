@@ -37,5 +37,5 @@ if (! class_exists('WpnatPublicFunctions')) {
 */
 
 if (! class_exists('WpnatAdminFunctions')) {
-    include_once WPNAT_PATH . 'classes/class-admin-functions.php';
+    include_once WPNAT_PATH . 'admin/classes/class-admin-functions.php';
 }
