@@ -2,14 +2,15 @@
 
 /**
  * Plugin Name:  WP Nathan React
- * Description:  Small description
- * Plugin URI:   ""
+ * Description:  This plugins help you change the look of wordpress comments
+ * Plugin URI:   https://github.com/nathanrodrigues2111/wp-nathan-react
  * Author:       Nathan Rodrigues
  * Version:      1.0
+ * License:      GPL v2 or later
+ * License URI:  https://www.gnu.org/licenses/gpl-2.0.html
+ * Update URI:   https://github.com/nathanrodrigues2111/wp-nathan-react
  * Text Domain:  wp-nathan
  * Domain Path:  /languages
- * License:      GPL v2 or later
- * License URI:  https://www.gnu.org/licenses/gpl-2.0.txt
 */
 
 /**

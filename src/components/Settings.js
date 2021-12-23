@@ -60,6 +60,8 @@ const Settings = () => {
                             <select name="default_comments_theme" id="default_comments_theme" value={selectedTheme} onChange={(e) => setSelectedTheme(e.target.value)}>
                                 <option value="regular">Regular theme</option>
                                 <option value="modern">Modern theme</option>
+                                <option value="twitter">Twitter theme</option>
+                                <option value="discord">Discord theme</option>
                             </select>
                             </td>
                         </tr>
