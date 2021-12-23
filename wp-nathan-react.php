@@ -21,6 +21,7 @@ if (! defined('ABSPATH')) {
 }
 
 define('WPNAT_PATH', trailingslashit(plugin_dir_path(__FILE__)));
+define('WPNAT_MAIN_FILE', __FILE__ );
 define('WPNAT_URL', trailingslashit(plugins_url('/', __FILE__)));
 define('WPNAT_TETXDOMAIN', 'wp-nathan-react');
 define('WPNAT_PLUGIN_NAME', 'WP Nathan React');

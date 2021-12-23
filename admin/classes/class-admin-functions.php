@@ -18,6 +18,7 @@ class WpnatAdminFunctions
         add_action('admin_menu', [ $this, 'wpnat_add_toplevel_menu' ]);
         add_action('admin_enqueue_scripts', [ $this, 'wpnat_enqueue_scripts' ]);
         add_action('rest_api_init', [ $this, 'wpnat_create_rest_routes' ]);
+        register_deactivation_hook( WPNAT_MAIN_FILE, array( $this, 'wpnat_plugin_deactivate' ) );
     }
 
     /**
@@ -26,9 +27,6 @@ class WpnatAdminFunctions
 
     public function wpnat_enqueue_scripts($hook)
     {
-        /**
-         * Check our page
-         */
         if ('toplevel_page_wpnat-settings' !== $hook) {
             return;
         }
@@ -40,7 +38,9 @@ class WpnatAdminFunctions
         ]);
     }
 
-    
+    /**
+    * Creating rest routes
+    */
     public function wpnat_create_rest_routes()
     {
         register_rest_route('wpnat/v1', '/settings', [
@@ -55,6 +55,9 @@ class WpnatAdminFunctions
         ]);
     }
 
+    /**
+    * Getting data
+    */
     public function wpnat_get_settings()
     {
         $selected_theme = get_option('wpnat_selected_theme');
@@ -67,11 +70,17 @@ class WpnatAdminFunctions
         return rest_ensure_response($response);
     }
 
+    /**
+    * Checking permissions
+    */
     public function wpnat_get_settings_permission()
     {
         return true;
     }
 
+    /**
+    * Saving settings
+    */
     public function wpnat_save_settings($req)
     {
         $selected_theme = isset($req['selected_theme']) ? sanitize_text_field($req['selected_theme']) : false;
@@ -112,6 +121,15 @@ class WpnatAdminFunctions
     {
         echo '<div class="wrap"><div id="wpnat-admin-app"></div></div>';
     }
+
+    /**
+    * Deactivation hook.
+    */
+    public function wpnat_plugin_deactivate() {
+        delete_option('wpnat_selected_theme');
+        delete_option('wpnat_enable_comments');
+    }
+    
 }
 
 WpnatAdminFunctions::get_instance();

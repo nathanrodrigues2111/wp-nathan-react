@@ -27,9 +27,10 @@ $comment_email = __('Add your email');
 $comment_url = __('Add your website url');
 ?>
 
-<div id="comments" class="wpnat-comments-area comments-area <?php if (get_option('wpnat_selected_theme')) {
-    echo get_option('wpnat_selected_theme');
-                                                            } ?> default-max-width <?php echo get_option('show_avatars') ? 'show-avatars' : ''; ?>">
+<div id="comments" class="wpnat-comments-area comments-area 
+    <?php if (get_option('wpnat_selected_theme')) { echo get_option('wpnat_selected_theme'); } ?> 
+    default-max-width 
+    <?php echo get_option('show_avatars') ? 'show-avatars' : ''; ?>">
 
     <?php
     if (have_comments()) :
