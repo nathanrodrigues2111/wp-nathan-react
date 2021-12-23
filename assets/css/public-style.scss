@@ -115,11 +115,8 @@ $primary-font: 'Roboto', sans-serif;
 						margin-top: -2px;
 						padding-left: 0;
 						line-height: normal;
-
-						a {
-							margin-right: 11px;
-							font-size: 1.5em;
-						}
+						font-size: 1.5em;
+						margin-right: 11px;
 					}
 
 					.wpnat-comment-metadata {
@@ -139,6 +136,17 @@ $primary-font: 'Roboto', sans-serif;
 				ol.children { 
 					padding-left: 0;
 					list-style: none;
+				
+					
+				}
+
+				.wpnat-comment-body {
+					.wpnat-comment-content, .wpnat-comment-content p, .wpnat-comment-awaiting-moderation {
+						margin-top: 5px;
+						margin-bottom: 15px;
+						font-size: 15px;
+						line-height: 22px; 
+					}
 				}
 			}
 		}
@@ -269,11 +277,9 @@ $primary-font: 'Roboto', sans-serif;
 				}
 
 				.wpnat-comment-author {
-					.fn {
-						a {
-							font-weight: 500;
-							color: $text-color;
-						}
+					.fn, .fn a {
+						font-weight: 500;
+						color: $text-color;
 					}
 				}
 				
@@ -297,16 +303,11 @@ $primary-font: 'Roboto', sans-serif;
 						}
 					}
 
-					.wpnat-comment-content {
-						p{
-							margin-top: 0;
-							font-size: 1.5em;
-							color: $text-color-alt-2;
-							line-height: 22px;
+					.wpnat-comment-content, .wpnat-comment-content p, .wpnat-comment-awaiting-moderation {
+						color: $text-color-alt-2;
 
-							a{
-								color: $link-color;
-							}
+						a{
+							color: $link-color;
 						}
 					}
 
@@ -419,24 +420,17 @@ $primary-font: 'Roboto', sans-serif;
 
 					.wpnat-comment-meta{
 						.wpnat-comment-author {
-							.fn {
-								a {
-									color: $black;
-								}
+							.fn, .fn a {
+								color: $black;
 							}
 						}
 					}
 
-					.wpnat-comment-content { 
-						p {
-							margin-top: 5px;
-							font-size: 1.5em; 
-							line-height: 1.4em;
-							color: $twitter-text-color;
+					.wpnat-comment-content, .wpnat-comment-content p, .wpnat-comment-awaiting-moderation {
+						color: $twitter-text-color;
 
-							a {
-								color: $twitter-primary-color;
-							}
+						a {
+							color: $twitter-primary-color;
 						}
 					}
 
@@ -586,11 +580,9 @@ $primary-font: 'Roboto', sans-serif;
 					padding-bottom: 35px;
 
 					.wpnat-comment-meta {
-						.fn {
-							a {
-								font-size: 1.5em;
-								color: $white;
-							}
+						.fn, .fn a {
+							font-size: 15px;
+							color: $white;
 						}
 
 						.wpnat-comment-metadata {
@@ -601,15 +593,11 @@ $primary-font: 'Roboto', sans-serif;
 						}
 					}
 
-					.wpnat-comment-content {
-						p {
-							margin-top: 5px;
-							font-size: 1.5em;
-							color: $white;
+					.wpnat-comment-content, .wpnat-comment-content p, .wpnat-comment-awaiting-moderation {
+						color: $white;
 
-							a {
-								color: $discord-link-color;
-							}
+						a {
+							color: $discord-link-color;
 						}
 					}
 

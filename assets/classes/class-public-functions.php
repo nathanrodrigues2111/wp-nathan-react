@@ -36,6 +36,10 @@ class WpnatPublicFunctions
         */
         wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
         wp_enqueue_style('public-styles', WPNAT_URL . 'assets/css/public-style.css');
+        
+        if (get_option('wpnat_selected_theme') !== 'modern') {
+            return;
+        }
         wp_enqueue_script('public-js', WPNAT_URL . 'assets/js/public-js.js', array(), true);
     }
 
