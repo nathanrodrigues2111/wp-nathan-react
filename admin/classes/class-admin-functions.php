@@ -18,8 +18,8 @@ class WpnatAdminFunctions
         add_action('admin_menu', [ $this, 'wpnat_add_toplevel_menu' ]);
         add_action('admin_enqueue_scripts', [ $this, 'wpnat_enqueue_scripts' ]);
         add_action('rest_api_init', [ $this, 'wpnat_create_rest_routes' ]);
-        register_activation_hook( WPNAT_MAIN_FILE, [ $this, 'wpnat_plugin_activation' ]);
-        register_deactivation_hook( WPNAT_MAIN_FILE, [ $this, 'wpnat_plugin_deactivate' ]);
+        register_activation_hook(WPNAT_MAIN_FILE, [ $this, 'wpnat_plugin_activation' ]);
+        register_deactivation_hook(WPNAT_MAIN_FILE, [ $this, 'wpnat_plugin_deactivate' ]);
     }
 
     /**
@@ -126,7 +126,8 @@ class WpnatAdminFunctions
     /**
     * Activation hook.
     */
-    public function wpnat_plugin_activation() {
+    public function wpnat_plugin_activation()
+    {
         add_option('wpnat_enable_comments', false, '', '');
         add_option('wpnat_selected_theme', 'regular', '', '');
     }
@@ -134,11 +135,11 @@ class WpnatAdminFunctions
     /**
     * Deactivation hook.
     */
-    public function wpnat_plugin_deactivate() {
+    public function wpnat_plugin_deactivate()
+    {
         delete_option('wpnat_selected_theme');
         delete_option('wpnat_enable_comments');
     }
-    
 }
 
 WpnatAdminFunctions::get_instance();

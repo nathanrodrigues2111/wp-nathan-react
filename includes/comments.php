@@ -27,8 +27,10 @@ $comment_email = __('Add your email');
 $comment_url = __('Add your website url');
 ?>
 
-<div id="comments" class="wpnat-comments-area comments-area <?php if (get_option('wpnat_selected_theme')) { echo get_option('wpnat_selected_theme');} ?> default-max-width <?php echo get_option('show_avatars') ? 'show-avatars' : ''; ?>">
-    <?php 
+<div id="comments" class="wpnat-comments-area comments-area <?php if (get_option('wpnat_selected_theme')) {
+    echo get_option('wpnat_selected_theme');
+                                                            } ?> default-max-width <?php echo get_option('show_avatars') ? 'show-avatars' : ''; ?>">
+    <?php
             $current_user = wp_get_current_user();
             comment_form(
                 array(
@@ -37,7 +39,7 @@ $comment_url = __('Add your website url');
                 'title_reply_before' => '',
                 'title_reply_after'  => '',
                 'label_submit' => 'Comment',
-                'comment_field' => '<p class="wpnat-comment-form-comment wpnat-common-input">' . get_avatar( $current_user->ID, 32 ) . '<textarea id="comment" name="comment" aria-required="true" placeholder="' . $comment_body . '"></textarea></p>',
+                'comment_field' => '<p class="wpnat-comment-form-comment wpnat-common-input">' . get_avatar($current_user->ID, 32) . '<textarea id="comment" name="comment" aria-required="true" placeholder="' . $comment_body . '"></textarea></p>',
                 'fields' => array(
                     //Author field
                     'author' => '<div class="wpnat-row"><p class="comment-form-author wpnat-common-input"><input id="author" name="author" aria-required="true" placeholder="' . $comment_author . '"></input></p>',
@@ -48,7 +50,7 @@ $comment_url = __('Add your website url');
                 ),
                 )
             );
-    ?>
+            ?>
     <?php
     if (have_comments()) :
         ?>
