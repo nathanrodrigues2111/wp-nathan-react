@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import App from '@Path/App';
 
 document.addEventListener( 'DOMContentLoaded', function() {
     var element = document.getElementById( 'wpnat-admin-app' );

@@ -1,5 +1,11 @@
+const path = require( 'path' )
 module.exports = {
     entry: "./src/index.js",
+    resolve: {
+		alias: {
+			'@Path': path.resolve( __dirname, 'src/' ),
+		},
+	},
     output: {
         path: __dirname,
         filename: "./dist/bundle.js"
