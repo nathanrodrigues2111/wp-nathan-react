@@ -171,8 +171,7 @@
 }
 
 #comments.wpnat-comments-area.modern .comment-respond form .wpnat-common-input textarea {
-  height: 50px;
-  min-height: 50px;
+  min-height: 80px;
 }
 
 #comments.wpnat-comments-area.modern .comment-respond form .comment-form-cookies-consent {

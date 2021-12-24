@@ -15,7 +15,7 @@ class WpnatAdminFunctions
 
     public function __construct()
     {
-        add_action('admin_menu', [ $this, 'wpnat_add_toplevel_menu' ]);
+        add_action('admin_menu', [ $this, 'wpnat_register_options_page' ]);
         add_action('admin_enqueue_scripts', [ $this, 'wpnat_enqueue_scripts' ]);
         add_action('rest_api_init', [ $this, 'wpnat_create_rest_routes' ]);
         register_activation_hook(WPNAT_MAIN_FILE, [ $this, 'wpnat_plugin_activation' ]);
@@ -28,7 +28,7 @@ class WpnatAdminFunctions
 
     public function wpnat_enqueue_scripts($hook)
     {
-        if ('toplevel_page_wpnat-settings' !== $hook) {
+        if ('settings_page_wpnat-settings' !== $hook) {
             return;
         }
 
@@ -36,6 +36,7 @@ class WpnatAdminFunctions
         wp_localize_script('wp-nathan-react', 'appLocalizer', [
             'apiUrl' => home_url('/wp-json'),
             'nonce' => wp_create_nonce('wp_rest'),
+            'pluginTitle' => WPNAT_PLUGIN_NAME,
         ]);
     }
 
@@ -97,23 +98,21 @@ class WpnatAdminFunctions
     }
 
     /**
-    * Adding top level menu
+    * Adding Setting level menu
     */
-    public function wpnat_add_toplevel_menu()
-    {
 
+    public function wpnat_register_options_page() {
         $capability = 'manage_options';
         $slug = 'wpnat-settings';
 
-        add_menu_page(
+        add_options_page(
             __(WPNAT_PLUGIN_NAME, WPNAT_TETXDOMAIN),
             __(WPNAT_PLUGIN_NAME, WPNAT_TETXDOMAIN),
             $capability,
             $slug,
             [ $this, 'wpnat_display_settings_page' ],
-            "",
         );
-    }
+      }
 
     /**
     * Displays settings page in admin

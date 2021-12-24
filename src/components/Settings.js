@@ -36,19 +36,21 @@ const Settings = () => {
 
     return(
         <React.Fragment>
-            <h1>WP-Nathan-React</h1>
+            <h1>{appLocalizer.pluginTitle}</h1>
             <form onSubmit={ (e) => handleSubmit(e) }>
                 <table className="form-table" role="presentation">
                     <tbody>
                         <tr>
                             <th scope="row">Enable comment styles</th>
                             <td>
-                                <input name="enable_comment_styles"
-                                type="checkbox"
-                                id="enable_comment_styles"
-                                checked={enableTheme}
-                                onChange={() => setEnableTheme(!enableTheme)}
-                                />
+                                <label htmlFor="enable_comment_styles">
+                                    <input name="enable_comment_styles"
+                                    type="checkbox"
+                                    id="enable_comment_styles"
+                                    checked={enableTheme}
+                                    onChange={() => setEnableTheme(!enableTheme)}
+                                    />	Enable this option to style the default comments section on your site
+                                </label>
                             </td>
                         </tr>
 

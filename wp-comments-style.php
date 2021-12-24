@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name:  WP Nathan React
+ * Plugin Name:  WP Comments Style
  * Description:  This plugins help you change the look of wordpress comments
  * Plugin URI:   https://github.com/nathanrodrigues2111/wp-nathan-react
  * Author:       Nathan Rodrigues
@@ -9,7 +9,7 @@
  * License:      GPL v2 or later
  * License URI:  https://www.gnu.org/licenses/gpl-2.0.html
  * Update URI:   https://github.com/nathanrodrigues2111/wp-nathan-react
- * Text Domain:  wp-nathan
+ * Text Domain:  wp-comments-style
  * Domain Path:  /languages
 */
 
@@ -23,8 +23,8 @@ if (! defined('ABSPATH')) {
 define('WPNAT_PATH', trailingslashit(plugin_dir_path(__FILE__)));
 define('WPNAT_MAIN_FILE', __FILE__);
 define('WPNAT_URL', trailingslashit(plugins_url('/', __FILE__)));
-define('WPNAT_TETXDOMAIN', 'wp-nathan-react');
-define('WPNAT_PLUGIN_NAME', 'WP Nathan React');
+define('WPNAT_TETXDOMAIN', 'wp-comments-style');
+define('WPNAT_PLUGIN_NAME', 'WP Comments Style');
 
 /**
 * Public functions
