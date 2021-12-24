@@ -470,7 +470,7 @@ $primary-font: 'Roboto', sans-serif;
 	}
 
 	&.discord {
-		padding: 20px;
+		padding: 30px;
 		border-radius: 20px;
 		background-color: $discord-primary-color;
 
@@ -617,6 +617,10 @@ $primary-font: 'Roboto', sans-serif;
 					}
 				}
 			}
+		}
+
+		@media ( max-width: 991px ) {
+			padding: 20px;
 		}
 	}
 }

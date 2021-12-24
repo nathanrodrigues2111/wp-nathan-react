@@ -419,7 +419,7 @@
 }
 
 #comments.wpnat-comments-area.discord {
-  padding: 20px;
+  padding: 30px;
   border-radius: 20px;
   background-color: #36393F;
 }
@@ -551,6 +551,12 @@
 
 #comments.wpnat-comments-area.discord .wpnat-comment-list .comment .wpnat-comment-body .wpnat-comment-content a, #comments.wpnat-comments-area.discord .wpnat-comment-list .comment .wpnat-comment-body .wpnat-comment-content p a, #comments.wpnat-comments-area.discord .wpnat-comment-list .comment .wpnat-comment-body .wpnat-comment-awaiting-moderation a {
   color: #768AD4;
+}
+
+@media (max-width: 991px) {
+  #comments.wpnat-comments-area.discord {
+    padding: 20px;
+  }
 }
 
 @media (min-width: 992px) {
