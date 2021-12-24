@@ -82,9 +82,9 @@ $primary-font: 'Roboto', sans-serif;
 							display: block;
 							position: absolute;
 							left: 0;
-							height: calc(2.25 * 1rem);
-							min-height: inherit;
-							width: calc(2.25 * 1rem);
+							width: 46px;
+							height: 46px;
+							
 						}
 					}
 				}
@@ -151,6 +151,10 @@ $primary-font: 'Roboto', sans-serif;
 						margin-bottom: 15px;
 						font-size: 15px;
 						line-height: 22px; 
+
+						img {
+							width: 100%;
+						}
 					}
 				}
 			}
@@ -319,7 +323,7 @@ $primary-font: 'Roboto', sans-serif;
 						margin-top: -3px;
 
 						.comment-reply-link {
-							font-size: 1.4em;
+							font-size: 14px;
 							font-weight: 500;
 							color: $text-color-alt-3;
 							background-color: transparent;
