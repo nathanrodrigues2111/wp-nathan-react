@@ -567,6 +567,7 @@ $primary-font: 'Roboto', sans-serif;
 							
 							a {
 								display: block;
+								position: relative;
 								width: 20px;
 								height: 20px;
 								background-image: url('../images/discord-close.svg');
@@ -574,6 +575,7 @@ $primary-font: 'Roboto', sans-serif;
 								background-position: center;
 								background-size: contain;
 								font-size: 0;
+								z-index: 1;
 							}
 						}
 

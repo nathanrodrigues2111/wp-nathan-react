@@ -516,6 +516,7 @@
 
 #comments.wpnat-comments-area.discord .wpnat-comment-list .comment.depth-1 .comment-respond small a {
   display: block;
+  position: relative;
   width: 20px;
   height: 20px;
   background-image: url("../images/discord-close.svg");
@@ -523,6 +524,7 @@
   background-position: center;
   background-size: contain;
   font-size: 0;
+  z-index: 1;
 }
 
 #comments.wpnat-comments-area.discord .wpnat-comment-list .comment.depth-1 .comment-respond .comment-form {

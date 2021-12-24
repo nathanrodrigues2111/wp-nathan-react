@@ -32,7 +32,7 @@ class WpnatAdminFunctions
             return;
         }
 
-        wp_enqueue_script('wp-nathan-react', WPNAT_URL . 'dist/bundle.js', [ 'jquery', 'wp-element' ], '', true);
+        wp_enqueue_script('wp-nathan-react', WPNAT_URL . 'dist/bundle.js', [ 'wp-element' ], '', true);
         wp_localize_script('wp-nathan-react', 'appLocalizer', [
             'apiUrl' => home_url('/wp-json'),
             'nonce' => wp_create_nonce('wp_rest'),
